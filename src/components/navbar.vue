@@ -20,10 +20,7 @@ export default {
 
 <style scoped>
 .header{
-  display :flex;
-  align-items:center;
-  justify-content: center;
-  background-color: #ffd9d9;
+
   &-button{
     height:50px;
     width:200px
