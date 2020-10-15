@@ -13,7 +13,8 @@ export default {
 <style scoped>
 .container{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   max-width: 520px;
   min-width: 520px;
