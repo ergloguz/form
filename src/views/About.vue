@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Container>
+<TableHeader/>
 
       <Table
           v-for="item in userList"
@@ -13,7 +13,7 @@
           :userCredit="item.userCredit"
       />
 
-    </Container>
+
   </div>
 </template>
 
@@ -21,14 +21,15 @@
 import Container from "@/components/Container";
 import Table from "@/components/Table";
 import {mapState} from "vuex"
+import TableHeader from "@/components/newTable";
+
+
 export default {
   name: "About",
-  components: {Table, Container},
+  components: {TableHeader, Table, Container},
   computed:
-    mapState(["userList"])
+      mapState(["userList"])
   ,
-
-
 
 
 }

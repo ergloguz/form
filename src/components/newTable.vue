@@ -1,28 +1,28 @@
 <template>
-<div>
+  <div>
     <div class="container">
 
       <div class="container-box">
-        <a class="container-box-text">{{ userName }} {{ userSurname }}</a>
+        <a class="container-box-text">AD SOYAD</a>
       </div>
       <div class="container-box">
-        <a class="container-box-text">{{ userIdentity }}</a>
-      </div>
-
-      <div class="container-box">
-        <a class="container-box-text">{{ userCost }} </a>
+        <a class="container-box-text">TC KİMLİK NO</a>
       </div>
 
       <div class="container-box">
-        <a class="container-box-text">{{ userCredit }} </a>
+        <a class="container-box-text">EV DEĞERİ </a>
       </div>
 
       <div class="container-box">
-        <a class="container-box-text">{{ userExpire }}</a>
+        <a class="container-box-text">KREDİ MİKTARI </a>
+      </div>
+
+      <div class="container-box">
+        <a class="container-box-text">VADE</a>
       </div>
     </div>
 
-</div>
+  </div>
 </template>
 
 <script>
@@ -41,12 +41,11 @@ export default {
 
 <style scoped>
 .container {
-  height: 101px;
+  height: 40px;
   width: 720px;
   justify-content: space-between;
   display: flex;
   padding: 20px;
-  background-color: #131B23;
   align-items: center;
   flex-direction: row;
   font-family: Open Sans;
@@ -54,7 +53,7 @@ export default {
   font-weight: normal;
   font-size: 14px;
   margin-top: 20px;
-
+  background-color: rgb(94, 114, 228);
   border-radius: 4px;
   box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
   color: #8898AA;
@@ -64,11 +63,12 @@ export default {
     justify-content: center;
     width:120px;
     height:100px;
+
     border-radius: 4px;
     &-text {
       font-size: 14px;
-      font-weight: bold;
-      color: #2dcad2;
+      font-weight: normal;
+      color: white;
     }
   }
   &-id {

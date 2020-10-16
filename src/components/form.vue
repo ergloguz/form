@@ -1,69 +1,72 @@
 <template>
   <div class="main">
-    <form @submit.prevent="submitForm()" class="main-contain" >
+    <form @submit.prevent="submitForm()"   class="main-contain">
       <div class="main-contain-top">
 
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">AD</a>
-          <input maxlength="11" :state="validateState('userName')" v-model="$v.form.userName.$model" class="main-contain-top-in-input">
-          <div class="error" v-if="!$v.form.userName.required">- This field is required</div>
-          <div class="error" v-if="!$v.form.userName.minLength">- Name must have at least 2 letters.</div>
-          <div class="error" v-if="!$v.form.userName.maxLength">- Name must max 10 letters.</div>
-          <div class="error" v-if="!$v.form.userName.nameValidations">- Türkçe karakter içeremez. </div>
+          <label>AD</label>
+          <input placeholder="Adınızı giriniz" maxlength="11" :state="validateState('userName')"
+                 v-model="$v.form.userName.$model">
+          <span v-if="!$v.form.userName.required">- This field is required</span>
+          <span v-if="!$v.form.userName.minLength">- Name must have at least 2 letters.</span>
+          <span v-if="!$v.form.userName.maxLength">- Name must max 10 letters.</span>
+          <span v-if="!$v.form.userName.nameValidations">- Türkçe karakter içeremez. </span>
         </div>
 
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">SOYAD</a>
-          <input v-model="form.userSurname" class="main-contain-top-in-input">
-          <div class="error" v-if="!$v.form.userSurname.required">- This field is required</div>
-          <div class="error" v-if="!$v.form.userSurname.minLength">- Name must have at least 2 letters.</div>
-          <div class="error" v-if="!$v.form.userSurname.surnameValidations">- Türkçe karakter içeremez. </div>
+          <label>SOYAD</label>
+          <input placeholder="Soyadınızı giriniz." v-model="form.userSurname">
+          <span v-if="!$v.form.userSurname.required">- This field is requirkuj6k
+            7ed</span>
+          <span v-if="!$v.form.userSurname.minLength">- Name must have at least 2 letters.</span>
+          <span v-if="!$v.form.userSurname.surnameValidations">- Türkçe karakter içeremez. </span>
         </div>
       </div>
 
 
       <div class="main-contain-top">
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">TC KİMLİK NO</a>
-          <input maxlength="11" v-model="form.userIdentity" class="main-contain-top-in-input">
-          <div class="error" v-if="!$v.form.userIdentity.required">- Bu alan gereklidir.</div>
-          <div class="error" v-if="!$v.form.userIdentity.minLength">- Bu alan en az 11 karakter alabilir.</div>
-          <div class="error" v-if="!$v.form.userIdentity.maxLength">- Bu alan en fazla 11 karakter alabilir</div>
-          <div class="error" v-if="!$v.form.userIdentity.identityValidations">- Harf İçeremez </div>
+          <label>TC KİMLİK NO</label>
+          <input placeholder="T.C Numaranızı giriniz." maxlength="11" v-model="form.userIdentity">
+          <span v-if="!$v.form.userIdentity.required">- Bu alan gereklidir.</span>
+          <span v-if="!$v.form.userIdentity.minLength">- Bu alan en az 11 karakter alabilir.</span>
+          <span v-if="!$v.form.userIdentity.maxLength">- Bu alan en fazla 11 karakter alabilir</span>
+          <span v-if="!$v.form.userIdentity.identityValidations">- Geçerli bir kimlik numarası giriniz. </span>
+
         </div>
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">EV DEĞERİ</a>
-          <input v-model="form.userCost" class="main-contain-top-in-input">
-          <div class="error" v-if="!$v.form.userCost.required">- Bu alan gereklidir.</div>
-          <div class="error" v-if="!$v.form.userCost.minValue">- En az 1000</div>
-          <div class="error" v-if="!$v.form.userCost.maxValue">- En fazla 1.000.000</div>
+          <label>EV DEĞERİ</label>
+          <input placeholder="Ev değerini giriniz." v-model="form.userCost">
+          <span v-if="!$v.form.userCost.required">- Bu alan gereklidir.</span>
+          <span v-if="!$v.form.userCost.minValue">- En az 1000</span>
+          <span v-if="!$v.form.userCost.maxValue">- En fazla 1.000.000</span>
         </div>
       </div>
 
 
       <div class="main-contain-top">
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">KREDİ TUTARI</a>
-          <input v-model="form.userCredit"
-                 class="main-contain-top-in-input">
-          <div class="error" v-if="!$v.form.userCredit.required">- Bu alan gereklidir.</div>
+          <label>KREDİ TUTARI</label>
+          <input placeholder="Kredi tutarını giriniz." v-model="form.userCredit">
+          <span  v-if="!$v.form.userCredit.required">- Bu alan gereklidir.</span>
         </div>
         <div class="main-contain-top-in">
-          <a class="main-contain-top-in-label">VADE</a>
-          <select v-model="form.userExpire" class="main-contain-top-in-select">
-
+          <label>VADE</label>
+          <select v-model="form.userExpire">
+            <option value="" disabled selected>Vadeyi seçiniz.</option>
             <template v-for="expire in Object.keys(EXPIRE)">
-              <option class="main-contain-top-in-select-option" :value="EXPIRE[expire].VALUE">
+              <option :value="EXPIRE[expire].TEXT">
                 {{ EXPIRE[expire].TEXT }}
               </option>
             </template>
           </select>
-          <div class="error" v-if="!$v.form.userExpire.required">- Bu alan gereklidir.</div>
+          <span class="error" v-if="!$v.form.userExpire.required">- Bu alan gereklidir.</span>
         </div>
       </div>
       <div class="fd">
         <button class="main-contain-top-button">Devam Et</button>
       </div>
+      <div></div>
     </form>
 
   </div>
@@ -71,7 +74,7 @@
 
 <script>
 import {validationMixin} from 'vuelidate'
-import {required, minLength, maxLength,maxValue,minValue} from 'vuelidate/lib/validators'
+import {required, minLength, maxLength, maxValue, minValue} from 'vuelidate/lib/validators'
 import {EXPIRE} from "@/expire";
 
 const nameValidations = (value) => {
@@ -80,9 +83,27 @@ const nameValidations = (value) => {
 const surnameValidations = (value) => {
   return /^[a-z]/.test(value)
 }
-const identityValidations = (value) => {
-  return /^[0-9]/.test(value)
-}
+const identityValidations = function (value) {
+  value = value.toString();
+  let isEleven = /^[0-9]{11}$/.test(value);
+  let totalX = 0;
+  for (let i = 0; i < 10; i++) {
+    totalX += Number(value.substr(i, 1));
+  }
+  let isRuleX = totalX % 10 == value.substr(10, 1);
+  let totalY1 = 0;
+  let totalY2 = 0;
+  for (let i = 0; i < 10; i += 2) {
+    totalY1 += Number(value.substr(i, 1));
+  }
+  for (let i = 1; i < 10; i += 2) {
+    totalY2 += Number(value.substr(i, 1));
+  }
+  let isRuleY = ((totalY1 * 7) - totalY2) % 10 == value.substr(9, 0);
+  return isEleven && isRuleX && isRuleY;
+};
+
+
 const costValidation = (value) => {
   return /^[0-9]/.test(value)
 }
@@ -124,23 +145,23 @@ export default {
         minLength: minLength(2),
         maxLength: maxLength(10),
       },
-      userIdentity:{
+      userIdentity: {
         required,
         identityValidations,
-        minLength:minLength(11),
-        maxLength:maxLength(11),
+        minLength: minLength(11),
+        maxLength: maxLength(11),
       },
       userCost: {
         required,
         costValidation,
         minValue: minValue(1000),
-        maxValue:maxValue(100000000),
+        maxValue: maxValue(100000000),
       },
-      userCredit:{
+      userCredit: {
         required,
         creditValidation,
       },
-      userExpire:{
+      userExpire: {
         required,
         expireValidations,
       }
@@ -189,9 +210,7 @@ export default {
 </script>
 
 <style scoped>
-.error{
-  color: red;
-}
+
 .fd {
   display: flex;
   align-items: center;
@@ -237,18 +256,7 @@ export default {
         flex-direction: column;
 
         &-select {
-          height: 45px;
-          border-radius: 4px;
-          border: 1px solid #CAD1D7;
-          margin-top: 13px;
-          width: 225px;
-          padding-left: 13px;
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 19px;
-          color: #8898AA;
+
         }
 
         &-label {
@@ -263,6 +271,7 @@ export default {
         }
 
         &-input {
+          background-color: #131B23;
           height: 43px;
           border-radius: 4px;
           border: 1px solid #cad1d7;
@@ -273,7 +282,7 @@ export default {
           font-weight: normal;
           font-size: 14px;
           line-height: 19px;
-          color: #0072ff;
+          color: #ffffff;
           width: 210px;
         }
       }
