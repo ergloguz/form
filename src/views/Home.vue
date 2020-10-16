@@ -3,7 +3,7 @@
 
 
     <Container>
-      <h1 class="title">HESAPKURDU KONUT KREDİSİ HESAPLA</h1>
+      <h1 class="title">KONUT KREDİSİ HESAPLA</h1>
       <Form @onSubmit="save"/>
     </Container>
     <router-link to="/about">
