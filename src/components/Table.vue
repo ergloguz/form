@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .container {
-  height: 101px;
+  height: 18px;
   width: 720px;
   justify-content: space-between;
   display: flex;
@@ -63,7 +63,7 @@ export default {
     align-items: center;
     justify-content: center;
     width:120px;
-    height:100px;
+    height:inherit;
     border-radius: 4px;
     &-text {
       font-size: 14px;

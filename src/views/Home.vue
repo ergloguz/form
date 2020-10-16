@@ -28,6 +28,7 @@ export default {
   },
   methods: {
     save(item) {
+
       this.$store.commit('NEW_COUNT', item);
     },
 
