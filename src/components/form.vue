@@ -35,8 +35,8 @@
           <label>EV DEĞERİ</label>
           <input placeholder="Ev değerini giriniz." v-model="form.userCost">
           <span v-if="!$v.form.userCost.required">- Bu alan zorunludur.</span>
-          <span v-if="!$v.form.userCost.minValue">- En az 1000</span>
-          <span v-if="!$v.form.userCost.maxValue">- En fazla 1.000.000</span>
+          <span v-if="!$v.form.userCost.minValue">- En az 1000 TL girilebilir.</span>
+          <span v-if="!$v.form.userCost.maxValue">- En fazla 1.000.000 TL girilebilir.</span>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
       <div class="main-contain-top">
         <div class="main-contain-top-in">
           <label>KREDİ TUTARI</label>
-          <input :v="$v.form.userCredit" placeholder="Kredi tutarını giriniz." v-model="form.userCredit">
+          <input :v="$v.form.userCredit" placeholder="Kredi tutarını giriniz." v-model="form.userCredit" >
           <span  v-if="!$v.form.userCredit.required">- Bu alan zorunludur.</span>
         </div>
         <div class="main-contain-top-in">
@@ -60,7 +60,7 @@
           <span class="error" v-if="!$v.form.userExpire.required">- Bu alan zorunludur.</span>
         </div>
       </div>
-      <div class="fd">
+      <div class="for">
         <button type="submit" class="main-contain-top-button">Devam Et</button>
       </div>
       <div></div>
@@ -114,13 +114,7 @@ const creditValidation = (value) => {
 export default {
   name: "Form",
   mixins: [validationMixin],
-  filters: {
-    formatTL() {
-      Vue.filter("amountSymbolTR", (value) => {
-        return `${value} TL`;
-      });
-    },
-  },
+
   data() {
     return {
       form: {
@@ -216,7 +210,7 @@ export default {
 
 <style scoped>
 
-.fd {
+.for {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,7 +226,6 @@ export default {
 
     &-top {
       display: flex;
-
       flex-direction: row;
       justify-content: space-between;
 
@@ -255,41 +248,9 @@ export default {
         font-size: 14px;
         color: white;
       }
-
       &-in {
         display: flex;
         flex-direction: column;
-
-        &-select {
-
-        }
-
-        &-label {
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 19px;
-          letter-spacing: 0.431667px;
-          color: #525F7F;
-          margin-top: 13px;
-        }
-
-        &-input {
-          background-color: #131B23;
-          height: 43px;
-          border-radius: 4px;
-          border: 1px solid #cad1d7;
-          margin-top: 13px;
-          padding-left: 13px;
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
-          line-height: 19px;
-          color: #ffffff;
-          width: 210px;
-        }
       }
 
     }

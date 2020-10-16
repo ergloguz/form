@@ -10,11 +10,11 @@
       </div>
 
       <div class="container-box">
-        <a class="container-box-text">{{ userCost }} </a>
+        <a class="container-box-text">{{ userCost }} TL</a>
       </div>
 
       <div class="container-box">
-        <a class="container-box-text">{{ userCredit }} </a>
+        <a class="container-box-text">{{ userCredit }} TL</a>
       </div>
 
       <div class="container-box">
@@ -54,7 +54,6 @@ export default {
   font-weight: normal;
   font-size: 14px;
   margin-top: 20px;
-
   border-radius: 4px;
   box-shadow: 0px 15px 35px rgba(50, 50, 93, 0.1), 0px 5px 15px rgba(0, 0, 0, 0.07);
   color: #8898AA;
