@@ -126,8 +126,6 @@ export default {
         userExpire: "",
       },
       EXPIRE
-
-
     }
   },
   validations: {
@@ -169,12 +167,6 @@ export default {
     }
 
   },
-  props: {
-    addBookFormData: {
-      type: Object,
-      default: null,
-    },
-  },
   methods: {
     validateState(name) {
       const {$dirty, $error} = this.$v.form[name];
@@ -199,11 +191,7 @@ export default {
       }
     },
   },
-  mounted() {
-    if (this.addBookFormData) {
-      this.form = this.addBookFormData;
-    }
-  },
+
 
 }
 </script>
@@ -218,35 +206,18 @@ export default {
 
 .main {
   padding: 22px;
-
   &-contain {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     &-top {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
       &-button {
-        display: flex;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        display: flex;
         width: 480px;
-        margin-top: 22px;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08), 0px 4px 4px rgba(50, 50, 93, 0.11);
         height: 43px;
-        background-color: rgb(94, 114, 228);
-        font-family: Open Sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        color: white;
+        margin-top: 22px;
       }
       &-in {
         display: flex;

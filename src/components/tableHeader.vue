@@ -29,13 +29,6 @@
 
 export default {
   name: "Table",
-  props: ["index", "userName","userIdentity", "userSurname", "userCost", "userExpire", "userCredit"],
-  computed: {
-    userList() {
-      return this.$store.state.userList;
-    },
-  },
-
 }
 </script>
 
@@ -48,9 +41,6 @@ export default {
   padding: 20px;
   align-items: center;
   flex-direction: row;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   margin-top: 20px;
   background-color: rgb(94, 114, 228);
@@ -63,23 +53,12 @@ export default {
     justify-content: center;
     width:120px;
     height:100px;
-
     border-radius: 4px;
     &-text {
       font-size: 14px;
       font-weight: normal;
       color: white;
     }
-  }
-  &-id {
-    font-weight: bold;
-    font-size: 14px;
-
-  }
-
-  &-text {
-    font-size: 14px;
-    font-weight: lighter;
   }
 }
 </style>

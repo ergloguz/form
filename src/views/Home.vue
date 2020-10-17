@@ -1,23 +1,19 @@
 <template>
   <div>
-
-
     <Container>
       <h1 class="title">KONUT KREDİSİ HESAPLA</h1>
       <Form @onSubmit="save"/>
     </Container>
-    <router-link to="/about">
+
+    <router-link to="/list">
       <button class="button">Listeyi Gör</button>
     </router-link>
-
   </div>
 </template>
 
 <script>
-
-
 import Container from "@/components/Container";
-import Form from "@/components/form";
+import Form from "@/components/Form";
 
 export default {
   name: 'Home',
@@ -32,7 +28,6 @@ export default {
   },
   methods: {
     save(item) {
-
       this.$store.commit('NEW_COUNT', item);
     },
 
@@ -43,18 +38,12 @@ export default {
 .button {
   height: 43px;
   width: 120px;
-  background-color: rgb(94, 114, 228);
-  border:none;
-  margin-top:20px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08), 0px 4px 4px rgba(50, 50, 93, 0.11);
-  border-radius: 4px;
-  color: white;
-
-  cursor: pointer;
+  margin-top: 20px;
 }
-.title{
+.title {
   text-align: center;
-   color: rgb(94, 114, 228);
+  color: rgb(var(--purple));
   font-family: "Open Sans";
+  margin-top: 20px;
 }
 </style>
