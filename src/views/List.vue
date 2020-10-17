@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import Container from "@/components/Container";
+
 import Table from "@/components/Table";
 import {mapState} from "vuex"
 import TableHeader from "@/components/tableHeader";
 
 export default {
   name: "About",
-  components: {TableHeader, Table, Container},
+  components: {TableHeader, Table},
 
   computed:
       mapState(["userList"])
